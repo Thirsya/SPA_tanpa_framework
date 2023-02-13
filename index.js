@@ -25,12 +25,12 @@ function AboutScreen(){
 }
 
 function HomeScreen(){
-    const input = document.createElement("input");
-    input.placeholder = "Enter your name";
-
     const textPreview = document.createElement("p");
-    textPreview.textContent = "Hello";
-
+    const input = document.createElement("input");
+    input.oninput = function(event){
+        textPreview.textContent = event.target.value;
+    };
+    input.placeholder = "Enter your name";
     const div =  document.createElement("div");
     div.append(input);
     div.append(textPreview);
